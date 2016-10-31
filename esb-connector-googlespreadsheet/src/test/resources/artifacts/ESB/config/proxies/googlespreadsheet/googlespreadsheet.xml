@@ -18,7 +18,7 @@
 -->
 
 <proxy xmlns="http://ws.apache.org/ns/synapse"
-       name="googlespreadsheetV4"
+       name="googlespreadsheet"
        startOnLoad="true"
        statistics="disable"
        trace="disable"
@@ -46,66 +46,66 @@
             <property expression="json-eval($.valueRenderOption)" name="valueRenderOption"/>
             <property expression="json-eval($.destinationSpreadsheetId)" name="destinationSpreadsheetId"/>
             <property expression="json-eval($.sheetId)" name="sheetId"/>
-            <googlespreadsheetV4.init>
+            <googlespreadsheet.init>
                 <accessToken>{$ctx:accessToken}</accessToken>
                 <apiUrl>{$ctx:apiUrl}</apiUrl>
-            </googlespreadsheetV4.init>
+            </googlespreadsheet.init>
             <switch source="get-property('transport', 'Action')">
                 <case regex="urn:getSheetMetaData">
-                    <googlespreadsheetV4.getSheetMetaData>
+                    <googlespreadsheet.getSheetMetaData>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <includeGridData>{$ctx:includeGridData}</includeGridData>
                         <ranges>{$ctx:ranges}</ranges>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.getSheetMetaData>
+                    </googlespreadsheet.getSheetMetaData>
                 </case>
                 <case regex="urn:createSpreadsheet">
-                    <googlespreadsheetV4.createSpreadsheet>
+                    <googlespreadsheet.createSpreadsheet>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <properties>{$ctx:properties}</properties>
                         <sheets>{$ctx:sheets}</sheets>
                         <namedRanges>{$ctx:namedRanges}</namedRanges>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.createSpreadsheet>
+                    </googlespreadsheet.createSpreadsheet>
                 </case>
                 <case regex="urn:addSheetBatchRequest">
-                    <googlespreadsheetV4.addSheetBatchRequest>
+                    <googlespreadsheet.addSheetBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.addSheetBatchRequest>
+                    </googlespreadsheet.addSheetBatchRequest>
                 </case>
                 <case regex="urn:copyTo">
-                    <googlespreadsheetV4.copyTo>
+                    <googlespreadsheet.copyTo>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <sheetId>{$ctx:sheetId}</sheetId>
                         <destinationSpreadsheetId>{$ctx:destinationSpreadsheetId}</destinationSpreadsheetId>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.copyTo>
+                    </googlespreadsheet.copyTo>
                 </case>
                 <case regex="urn:deleteSheetBatchRequest">
-                    <googlespreadsheetV4.deleteSheetBatchRequest>
+                    <googlespreadsheet.deleteSheetBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.deleteSheetBatchRequest>
+                    </googlespreadsheet.deleteSheetBatchRequest>
                 </case>
                 <case regex="urn:updateSheetPropertiesBatchRequest">
-                    <googlespreadsheetV4.updateSheetPropertiesBatchRequest>
+                    <googlespreadsheet.updateSheetPropertiesBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.updateSheetPropertiesBatchRequest>
+                    </googlespreadsheet.updateSheetPropertiesBatchRequest>
                 </case>
                 <case regex="urn:addConditionalFormatRuleBatchRequest">
-                    <googlespreadsheetV4.addConditionalFormatRuleBatchRequest>
+                    <googlespreadsheet.addConditionalFormatRuleBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.addConditionalFormatRuleBatchRequest>
+                    </googlespreadsheet.addConditionalFormatRuleBatchRequest>
                 </case>
                 <case regex="urn:addRowsColumnsData">
-                    <googlespreadsheetV4.addRowsColumnsData>
+                    <googlespreadsheet.addRowsColumnsData>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <range>{$ctx:range}</range>
                         <insertDataOption>{$ctx:insertDataOption}</insertDataOption>
@@ -113,157 +113,157 @@
                         <fields>{$ctx:fields}</fields>
                         <majorDimension>{$ctx:majorDimension}</majorDimension>
                         <values>{$ctx:values}</values>
-                    </googlespreadsheetV4.addRowsColumnsData>
+                    </googlespreadsheet.addRowsColumnsData>
                 </case>
                 <case regex="urn:appendDimensionBatchRequest">
-                    <googlespreadsheetV4.appendDimensionBatchRequest>
+                    <googlespreadsheet.appendDimensionBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.appendDimensionBatchRequest>
+                    </googlespreadsheet.appendDimensionBatchRequest>
                 </case>
                 <case regex="urn:autoResizeDimensionsBatchRequest">
-                    <googlespreadsheetV4.autoResizeDimensionsBatchRequest>
+                    <googlespreadsheet.autoResizeDimensionsBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.autoResizeDimensionsBatchRequest>
+                    </googlespreadsheet.autoResizeDimensionsBatchRequest>
                 </case>
                 <case regex="urn:copyPasteBatchRequest">
-                    <googlespreadsheetV4.copyPasteBatchRequest>
+                    <googlespreadsheet.copyPasteBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.copyPasteBatchRequest>
+                    </googlespreadsheet.copyPasteBatchRequest>
                 </case>
                 <case regex="urn:cutPasteBatchRequest">
-                    <googlespreadsheetV4.cutPasteBatchRequest>
+                    <googlespreadsheet.cutPasteBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.cutPasteBatchRequest>
+                    </googlespreadsheet.cutPasteBatchRequest>
                 </case>
                 <case regex="urn:deleteConditionalFormatRuleBatchRequest">
-                    <googlespreadsheetV4.deleteConditionalFormatRuleBatchRequest>
+                    <googlespreadsheet.deleteConditionalFormatRuleBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.deleteConditionalFormatRuleBatchRequest>
+                    </googlespreadsheet.deleteConditionalFormatRuleBatchRequest>
                 </case>
                 <case regex="urn:deleteDimensionBatchRequest">
-                    <googlespreadsheetV4.deleteDimensionBatchRequest>
+                    <googlespreadsheet.deleteDimensionBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.deleteDimensionBatchRequest>
+                    </googlespreadsheet.deleteDimensionBatchRequest>
                 </case>
                 <case regex="urn:editCell">
-                    <googlespreadsheetV4.editCell>
+                    <googlespreadsheet.editCell>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <range>{$ctx:range}</range>
                         <valueInputOption>{$ctx:valueInputOption}</valueInputOption>
                         <fields>{$ctx:fields}</fields>
                         <majorDimension>{$ctx:majorDimension}</majorDimension>
                         <values>{$ctx:values}</values>
-                    </googlespreadsheetV4.editCell>
+                    </googlespreadsheet.editCell>
                 </case>
                 <case regex="urn:editMultipleCell">
-                    <googlespreadsheetV4.editMultipleCell>
+                    <googlespreadsheet.editMultipleCell>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <data>{$ctx:data}</data>
                         <valueInputOption>{$ctx:valueInputOption}</valueInputOption>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.editMultipleCell>
+                    </googlespreadsheet.editMultipleCell>
                 </case>
                 <case regex="urn:getCellData">
-                    <googlespreadsheetV4.getCellData>
+                    <googlespreadsheet.getCellData>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <range>{$ctx:range}</range>
                         <dateTimeRenderOption>{$ctx:dateTimeRenderOption}</dateTimeRenderOption>
                         <majorDimension>{$ctx:majorDimension}</majorDimension>
                         <valueRenderOption>{$ctx:valueRenderOption}</valueRenderOption>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.getCellData>
+                    </googlespreadsheet.getCellData>
                 </case>
                 <case regex="urn:getMultipleCellData">
-                    <googlespreadsheetV4.getMultipleCellData>
+                    <googlespreadsheet.getMultipleCellData>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <ranges>{$ctx:ranges}</ranges>
                         <dateTimeRenderOption>{$ctx:dateTimeRenderOption}</dateTimeRenderOption>
                         <majorDimension>{$ctx:majorDimension}</majorDimension>
                         <valueRenderOption>{$ctx:valueRenderOption}</valueRenderOption>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.getMultipleCellData>
+                    </googlespreadsheet.getMultipleCellData>
                 </case>
                 <case regex="urn:insertDimensionBatchRequest">
-                    <googlespreadsheetV4.insertDimensionBatchRequest>
+                    <googlespreadsheet.insertDimensionBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.insertDimensionBatchRequest>
+                    </googlespreadsheet.insertDimensionBatchRequest>
                 </case>
                 <case regex="urn:mergeCellsBatchRequest">
-                    <googlespreadsheetV4.mergeCellsBatchRequest>
+                    <googlespreadsheet.mergeCellsBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.mergeCellsBatchRequest>
+                    </googlespreadsheet.mergeCellsBatchRequest>
                 </case>
                 <case regex="urn:moveDimensionBatchRequest">
-                    <googlespreadsheetV4.moveDimensionBatchRequest>
+                    <googlespreadsheet.moveDimensionBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.moveDimensionBatchRequest>
+                    </googlespreadsheet.moveDimensionBatchRequest>
                 </case>
                 <case regex="urn:repeatCellsBatchRequest">
-                    <googlespreadsheetV4.repeatCellsBatchRequest>
+                    <googlespreadsheet.repeatCellsBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.repeatCellsBatchRequest>
+                    </googlespreadsheet.repeatCellsBatchRequest>
                 </case>
                 <case regex="urn:setDataValidationBatchRequest">
-                    <googlespreadsheetV4.setDataValidationBatchRequest>
+                    <googlespreadsheet.setDataValidationBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.setDataValidationBatchRequest>
+                    </googlespreadsheet.setDataValidationBatchRequest>
                 </case>
                 <case regex="urn:sortRangeBatchRequest">
-                    <googlespreadsheetV4.sortRangeBatchRequest>
+                    <googlespreadsheet.sortRangeBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.sortRangeBatchRequest>
+                    </googlespreadsheet.sortRangeBatchRequest>
                 </case>
                 <case regex="urn:updateBordersBatchRequest">
-                    <googlespreadsheetV4.updateBordersBatchRequest>
+                    <googlespreadsheet.updateBordersBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.updateBordersBatchRequest>
+                    </googlespreadsheet.updateBordersBatchRequest>
                 </case>
                 <case regex="urn:updateCellsBatchRequest">
-                    <googlespreadsheetV4.updateCellsBatchRequest>
+                    <googlespreadsheet.updateCellsBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.updateCellsBatchRequest>
+                    </googlespreadsheet.updateCellsBatchRequest>
                 </case>
                 <case regex="urn:updateConditionalFormatRuleBatchRequest">
-                    <googlespreadsheetV4.updateConditionalFormatRuleBatchRequest>
+                    <googlespreadsheet.updateConditionalFormatRuleBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.updateConditionalFormatRuleBatchRequest>
+                    </googlespreadsheet.updateConditionalFormatRuleBatchRequest>
                 </case>
                 <case regex="urn:updateDimensionPropertiesBatchRequest">
-                    <googlespreadsheetV4.updateDimensionPropertiesBatchRequest>
+                    <googlespreadsheet.updateDimensionPropertiesBatchRequest>
                         <spreadsheetId>{$ctx:spreadsheetId}</spreadsheetId>
                         <requests>{$ctx:requests}</requests>
                         <fields>{$ctx:fields}</fields>
-                    </googlespreadsheetV4.updateDimensionPropertiesBatchRequest>
+                    </googlespreadsheet.updateDimensionPropertiesBatchRequest>
                 </case>
             </switch>
             <respond/>
