@@ -35,14 +35,14 @@
         <script language="js">
             <![CDATA[
                 //request body param variables
-		        var spreadsheetId = mc.getProperty("spreadsheetId");
-		        var properties = mc.getProperty("properties");
-		        var sheets = mc.getProperty("sheets");
-		        var fields = mc.getProperty("fields");
-		        var namedRanges = mc.getProperty("namedRanges");
-		        //url param processing start
-		        var urlParamString = '';
-		        if (fields != "" && fields != null) {
+                var spreadsheetId = mc.getProperty("spreadsheetId");
+                var properties = mc.getProperty("properties");
+                var sheets = mc.getProperty("sheets");
+                var fields = mc.getProperty("fields");
+                var namedRanges = mc.getProperty("namedRanges");
+                //url param processing start
+                var urlParamString = '';
+                if (fields != "" && fields != null) {
                     urlParamString += '&fields=' + fields;
                 }
                 if(urlParamString != '') {
