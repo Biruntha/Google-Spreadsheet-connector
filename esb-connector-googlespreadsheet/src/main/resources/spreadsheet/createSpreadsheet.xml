@@ -42,7 +42,7 @@
 		        var namedRanges = mc.getProperty("namedRanges");
 		        //url param processing start
 		        var urlParamString = '';
-                if (fields != "" && fields != null) {
+		        if (fields != "" && fields != null) {
                     urlParamString += '&fields=' + fields;
                 }
                 if(urlParamString != '') {
