@@ -53,10 +53,10 @@
                     <then>
                         <script language="js">
                             <![CDATA[
-                           importPackage(Packages.org.apache.synapse.config);
-                           var newAccess = mc.getProperty('uri.var.accessToken');
-                           var newAccessRegistryPath = mc.getProperty('uri.var.accessTokenRegistryPath');
-                           if(newAccess != null && newAccess != ''){
+                               importPackage(Packages.org.apache.synapse.config);
+                               var newAccess = mc.getProperty('uri.var.accessToken');
+                               var newAccessRegistryPath = mc.getProperty('uri.var.accessTokenRegistryPath');
+                               if(newAccess != null && newAccess != ''){
                                //Create the registry entry if no such entry exists.
                                mc.getConfiguration().getRegistry().newResource(newAccessRegistryPath,false);
                                mc.getConfiguration().getRegistry().updateResource(newAccessRegistryPath,newAccess);

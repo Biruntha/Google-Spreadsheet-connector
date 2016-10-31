@@ -36,35 +36,35 @@
         <property name="values" expression="$func:values"/>
         <script language="js">
             <![CDATA[
-                 //url param variables
-		        var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
-		        var range = mc.getProperty("uri.var.range");
-		        var insertDataOption = mc.getProperty("insertDataOption");
-		        var valueInputOption = mc.getProperty("uri.var.valueInputOption");
-		        var fields = mc.getProperty("fields");
-		        //url param processing start
-		        var urlParamString = '';
+                //url param variables
+                var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
+                var range = mc.getProperty("uri.var.range");
+                var insertDataOption = mc.getProperty("insertDataOption");
+                var valueInputOption = mc.getProperty("uri.var.valueInputOption");
+                var fields = mc.getProperty("fields");
+                //url param processing start
+                var urlParamString = '';
                 if (insertDataOption != "" && insertDataOption != null) {
-					urlParamString += '&insertDataOption=' + insertDataOption;
-				}
-				if (fields != "" && fields != null) {
-					urlParamString += '&fields=' + fields;
-				}
-				mc.setProperty('uri.var.urlParamString', urlParamString);
-				//url param processing end
+                    urlParamString += '&insertDataOption=' + insertDataOption;
+                }
+                if (fields != "" && fields != null) {
+                    urlParamString += '&fields=' + fields;
+                }
+                mc.setProperty('uri.var.urlParamString', urlParamString);
+                //url param processing end
                 //request body param variables
-		        var majorDimension = mc.getProperty("majorDimension");
-		        var values = mc.getProperty("values");
+                var majorDimension = mc.getProperty("majorDimension");
+                var values = mc.getProperty("values");
                 //request body param processing start
-				payload = {};
-				if (majorDimension != null && majorDimension != "") {
+                payload = {};
+                if (majorDimension != null && majorDimension != "") {
                         payload.majorDimension = majorDimension;
-				}
-				if (values != null && values != "" && values!= []) {
+                }
+                if (values != null && values != "" && values!= []) {
                         payload.values = eval("("+values+")");
-				}
-				mc.setPayloadJSON(payload);
-				//request body param processing end
+                }
+                mc.setPayloadJSON(payload);
+                //request body param processing end
             ]]>
         </script>
         <call>

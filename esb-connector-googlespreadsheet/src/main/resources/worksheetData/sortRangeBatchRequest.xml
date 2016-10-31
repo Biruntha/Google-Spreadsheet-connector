@@ -39,19 +39,19 @@
         </payloadFactory>
         <script language="js">
             <![CDATA[
-                 //url param variables
-		        var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
-		        var fields = mc.getProperty("fields");
-		        //url param processing start
-		        var urlParamString = '';
-				if (fields != "" && fields != null) {
-					urlParamString += '&fields=' + fields;
-				}
-				if(urlParamString != '') {
-					urlParamString = '?' + urlParamString.toString().substring(1);
-				}
-				mc.setProperty('uri.var.urlParamString', urlParamString);
-				//url param processing end
+                //url param variables
+                var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
+                var fields = mc.getProperty("fields");
+                //url param processing start
+                var urlParamString = '';
+                if (fields != "" && fields != null) {
+                    urlParamString += '&fields=' + fields;
+                }
+                if(urlParamString != '') {
+                    urlParamString = '?' + urlParamString.toString().substring(1);
+                }
+                mc.setProperty('uri.var.urlParamString', urlParamString);
+                //url param processing end
             ]]>
         </script>
         <call>

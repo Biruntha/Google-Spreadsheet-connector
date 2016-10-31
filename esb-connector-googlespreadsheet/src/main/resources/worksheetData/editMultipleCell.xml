@@ -40,28 +40,28 @@
         </payloadFactory>
         <script language="js">
             <![CDATA[
-                 //url param variables
-		        var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
-		        var fields = mc.getProperty("fields");
-		        //url param processing start
-		        var urlParamString = '';
-				if (fields != "" && fields != null) {
-					urlParamString += 'fields=' + fields;
-				}
-				if(urlParamString != '') {
-					urlParamString = '?' + urlParamString;
-				}
-				mc.setProperty('uri.var.urlParamString', urlParamString);
-				//url param processing end
-				//request body param variables
-		        var data = mc.getProperty("data");
+                //url param variables
+                var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
+                var fields = mc.getProperty("fields");
+                //url param processing start
+                var urlParamString = '';
+                if (fields != "" && fields != null) {
+                    urlParamString += 'fields=' + fields;
+                }
+                if(urlParamString != '') {
+                    urlParamString = '?' + urlParamString;
+                }
+                mc.setProperty('uri.var.urlParamString', urlParamString);
+                //url param processing end
+                //request body param variables
+                var data = mc.getProperty("data");
                 //request body param processing start
                 payload = mc.getPayloadJSON();
-				if (data != null && data != "" && data!= []) {
+                if (data != null && data != "" && data!= []) {
                         payload.data = eval("("+data+")");
-				}
-				mc.setPayloadJSON(payload);
-				//request body param processing end
+                }
+                mc.setPayloadJSON(payload);
+                //request body param processing end
             ]]>
         </script>
         <call>

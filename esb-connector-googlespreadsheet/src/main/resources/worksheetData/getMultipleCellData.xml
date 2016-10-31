@@ -38,38 +38,38 @@
             <![CDATA[
                 //url param variables
                 var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
-		        var ranges = mc.getProperty("ranges");
-		        var dateTimeRenderOption = mc.getProperty("dateTimeRenderOption");
-		        var majorDimension = mc.getProperty("majorDimension");
-		        var valueRenderOption = mc.getProperty("valueRenderOption");
-		        var fields = mc.getProperty("fields");
+                var ranges = mc.getProperty("ranges");
+                var dateTimeRenderOption = mc.getProperty("dateTimeRenderOption");
+                var majorDimension = mc.getProperty("majorDimension");
+                var valueRenderOption = mc.getProperty("valueRenderOption");
+                var fields = mc.getProperty("fields");
                 //url param processing start
-		        var urlParamString = '';
-				if (dateTimeRenderOption != "" && dateTimeRenderOption != null) {
-					urlParamString += '&dateTimeRenderOption=' + dateTimeRenderOption;
-				}
-				if(ranges != "" && ranges != null){
+                var urlParamString = '';
+                if (dateTimeRenderOption != "" && dateTimeRenderOption != null) {
+                    urlParamString += '&dateTimeRenderOption=' + dateTimeRenderOption;
+                }
+                if(ranges != "" && ranges != null){
                     var rangesArray = ranges.split(",");
                     for (var i = 0; i < rangesArray.length; ++i) {
                         if (rangesArray[i] != "" && rangesArray[i] != null) {
                             urlParamString += '&ranges=' + rangesArray[i];
                         }
                     }
-				}
-				if (majorDimension != "" && majorDimension != null) {
-					urlParamString += '&majorDimension=' + majorDimension;
-				}
+                }
+                if (majorDimension != "" && majorDimension != null) {
+                    urlParamString += '&majorDimension=' + majorDimension;
+                }
                 if (valueRenderOption != "" && valueRenderOption != null) {
-					urlParamString += '&valueRenderOption=' + valueRenderOption;
-				}
-				if (fields != "" && fields != null) {
-					urlParamString += '&fields=' + fields;
-				}
-				if(urlParamString != '') {
-					urlParamString = '?' + urlParamString.toString().substring(1);
-				}
-				mc.setProperty('uri.var.urlParamString', urlParamString);
-				//url param processing end
+                    urlParamString += '&valueRenderOption=' + valueRenderOption;
+                }
+                if (fields != "" && fields != null) {
+                    urlParamString += '&fields=' + fields;
+                }
+                if(urlParamString != '') {
+                    urlParamString = '?' + urlParamString.toString().substring(1);
+                }
+                mc.setProperty('uri.var.urlParamString', urlParamString);
+                //url param processing end
             ]]>
         </script>
         <call>

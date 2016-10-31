@@ -753,6 +753,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
     /**
+     * Positive test case for mergeCellsBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {mergeCellsBatchRequest} integration test with Optional parameters.")
+    public void testMergeCellsBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:mergeCellsBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "mergeCellsBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_mergeCellsBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
+    }
+    /**
      * Positive test case for moveDimensionBatchRequest method with mandatory parameters.
      */
     @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {moveDimensionBatchRequest} integration test with mandatory parameters.")
@@ -778,6 +792,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
+    }
+    /**
+     * Positive test case for moveDimensionBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {moveDimensionBatchRequest} integration test with Optional parameters.")
+    public void testMoveDimensionBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:moveDimensionBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "moveDimensionBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_moveDimensionBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
     }
     /**
      * Positive test case for repeatCellsBatchRequest method with mandatory parameters.
@@ -806,8 +834,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
-
-
+    /**
+     * Positive test case for repeatCellsBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {repeatCellsBatchRequest} integration test with Optional parameters.")
+    public void testRepeatCellsBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:repeatCellsBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "repeatCellsBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_repeatCellsBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
+    }
     /**
      * Positive test case for setDataValidationBatchRequest method with mandatory parameters.
      */
@@ -834,6 +874,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
+    }
+    /**
+     * Positive test case for setDataValidationBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {setDataValidationBatchRequest} integration test with Optional parameters.")
+    public void testSetDataValidationBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:setDataValidationBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "setDataValidationBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_setDataValidationBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
     }
     /**
      * Positive test case for sortRangeBatchRequest method with mandatory parameters.
@@ -864,6 +918,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
     /**
+     * Positive test case for sortRangeBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {sortRangeBatchRequest} integration test with Optional parameters.")
+    public void testSortRangeBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:sortRangeBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "sortRangeBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_sortRangeBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
+    }
+    /**
      * Positive test case for updateBordersBatchRequest method with mandatory parameters.
      */
     @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateBordersBatchRequest} integration test with mandatory parameters.")
@@ -891,6 +959,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
     /**
+     * Positive test case for updateBordersBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateBordersBatchRequest} integration test with Optional parameters.")
+    public void testUpdateBordersBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:updateBordersBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateBordersBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateBordersBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
+    }
+    /**
      * Positive test case for updateCellsBatchRequest method with mandatory parameters.
      */
     @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateCellsBatchRequest} integration test with mandatory parameters.")
@@ -904,8 +986,6 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
     }
-
-
     /**
      *
      * Negative test case for updateCellsBatchRequest method.
@@ -919,6 +999,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap);
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
+    }
+    /**
+     * Positive test case for updateCellsBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateCellsBatchRequest} integration test with Optional parameters.")
+    public void testUpdateCellsBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:updateCellsBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateCellsBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateCellsBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
     }
     /**
      * Positive test case for updateConditionalFormatRuleBatchRequest method with mandatory parameters.
@@ -949,6 +1043,20 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
     /**
+     * Positive test case for updateConditionalFormatRuleBatchRequest method with Optional parameters.
+     */
+    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateConditionalFormatRuleBatchRequest} integration test with Optional parameters.")
+    public void testUpdateConditionalFormatRuleBatchRequestWithOptionalParameters() throws Exception {
+        esbRequestHeadersMap.put("Action", "urn:updateConditionalFormatRuleBatchRequest");
+        RestResponse<JSONObject> esbRestResponse =
+                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateConditionalFormatRuleBatchRequestOptional.json");
+        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
+        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateConditionalFormatRuleBatchRequestMandatory.json");
+        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
+        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
+    }
+    /**
      *
      * Positive test case for updateDimensionPropertiesBatchRequest method with mandatory parameters.
      */
@@ -977,121 +1085,6 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 400);
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 400);
     }
-
-    /**
-     * Positive test case for mergeCellsBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {mergeCellsBatchRequest} integration test with Optional parameters.")
-    public void testMergeCellsBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:mergeCellsBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "mergeCellsBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_mergeCellsBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for moveDimensionBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {moveDimensionBatchRequest} integration test with Optional parameters.")
-    public void testMoveDimensionBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:moveDimensionBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "moveDimensionBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_moveDimensionBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-
-
-    /**
-     * Positive test case for repeatCellsBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {repeatCellsBatchRequest} integration test with Optional parameters.")
-    public void testRepeatCellsBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:repeatCellsBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "repeatCellsBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_repeatCellsBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for setDataValidationBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {setDataValidationBatchRequest} integration test with Optional parameters.")
-    public void testSetDataValidationBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:setDataValidationBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "setDataValidationBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_setDataValidationBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for sortRangeBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {sortRangeBatchRequest} integration test with Optional parameters.")
-    public void testSortRangeBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:sortRangeBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "sortRangeBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_sortRangeBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for updateBordersBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateBordersBatchRequest} integration test with Optional parameters.")
-    public void testUpdateBordersBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:updateBordersBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateBordersBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateBordersBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for updateCellsBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateCellsBatchRequest} integration test with Optional parameters.")
-    public void testUpdateCellsBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:updateCellsBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateCellsBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateCellsBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
-    /**
-     * Positive test case for updateConditionalFormatRuleBatchRequest method with Optional parameters.
-     */
-    @Test(groups = {"wso2.esb"}, description = "googlespreadsheet {updateConditionalFormatRuleBatchRequest} integration test with Optional parameters.")
-    public void testUpdateConditionalFormatRuleBatchRequestWithOptionalParameters() throws Exception {
-        esbRequestHeadersMap.put("Action", "urn:updateConditionalFormatRuleBatchRequest");
-        RestResponse<JSONObject> esbRestResponse =
-                sendJsonRestRequest(proxyUrl, "POST", esbRequestHeadersMap, "updateConditionalFormatRuleBatchRequestOptional.json");
-        String apiEndPoint = connectorProperties.getProperty("apiUrl") + "/" + connectorProperties.getProperty("spreadsheetId") + ":batchUpdate?fields=" + connectorProperties.getProperty("fieldSpreadsheetId");
-        RestResponse<JSONObject> apiRestResponse = sendJsonRestRequest(apiEndPoint, "POST", apiRequestHeadersMap, "api_updateConditionalFormatRuleBatchRequestMandatory.json");
-        Assert.assertEquals(esbRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
-        Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
-    }
     /**
      *
      * Positive test case for updateDimensionPropertiesBatchRequest method with Optional parameters.
@@ -1107,7 +1100,6 @@ public class GooglespreadsheetConnectorIntegrationTest extends ConnectorIntegrat
         Assert.assertEquals(apiRestResponse.getHttpStatusCode(), 200);
         Assert.assertEquals(esbRestResponse.getBody().get("spreadsheetId"), apiRestResponse.getBody().get("spreadsheetId"));
     }
-
     /**
      * Positive test case for copyTo method with mandatory parameters.
      */
