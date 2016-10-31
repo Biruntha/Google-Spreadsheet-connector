@@ -21,7 +21,9 @@
     <subComponents>
         <component name="getSheetMetaData">
             <file>getSheetMetaData.xml</file>
-            <description>provides a feed to access the sheet metadata contained within a given spreadsheet.</description>
+            <description>provides a feed to access the sheet metadata contained within a given
+                spreadsheet.
+            </description>
         </component>
         <component name="addSheetBatchRequest">
             <file>addSheetBatchRequest.xml</file>
@@ -37,7 +39,8 @@
         </component>
         <component name="copyTo">
             <file>copyTo.xml</file>
-            <description>Copies a single sheet from a spreadsheet to another spreadsheet.</description>
+            <description>Copies a single sheet from a spreadsheet to another spreadsheet.
+            </description>
         </component>
     </subComponents>
 </component>

@@ -18,11 +18,12 @@
 -->
 
 <template name="getSheetMetaData" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="spreadsheetId" description="Unique value of the spreadsheet"/>
+    <parameter name="spreadsheetId" description="Unique identifier of the spreadsheet"/>
     <parameter name="includeGridData" description="True if grid data should be returned.
                                 This parameter is ignored if a field mask was set in the request"/>
     <parameter name="ranges" description="The ranges to retrieve from the spreadsheet"/>
-    <parameter name="fields" description="Specifying which fields to include in a partial response"/>
+    <parameter name="fields"
+               description="Specifying which fields to include in a partial response"/>
     <sequence>
         <property name="uri.var.spreadsheetId" expression="$func:spreadsheetId"/>
         <property name="includeGridData" expression="$func:includeGridData"/>
@@ -36,7 +37,6 @@
 		        var ranges = mc.getProperty("ranges");
 		        var fields = mc.getProperty("fields");
                 //url param processing start
-		       	mc.setProperty('uri.var.spreadsheetId', spreadsheetId);
 		        var urlParamString = '';
 				if (includeGridData != "" && includeGridData != null) {
 					urlParamString += '&includeGridData=' + includeGridData;

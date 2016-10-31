@@ -18,9 +18,10 @@
 -->
 
 <template name="editMultipleCell" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="spreadsheetId" description="Unique value of the spreadsheet"/>
+    <parameter name="spreadsheetId" description="Unique identifier of the spreadsheet"/>
     <parameter name="valueInputOption" description="How the input data should be interpreted"/>
-    <parameter name="fields" description="Specifying which fields to include in a partial response"/>
+    <parameter name="fields"
+               description="Specifying which fields to include in a partial response"/>
     <parameter name="data" description="The new values to apply to the spreadsheet"/>
     <sequence>
         <property name="uri.var.spreadsheetId" expression="$func:spreadsheetId"/>
@@ -43,7 +44,6 @@
 		        var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
 		        var fields = mc.getProperty("fields");
 		        //url param processing start
-		       	mc.setProperty('uri.var.spreadsheetId', spreadsheetId);
 		        var urlParamString = '';
 				if (fields != "" && fields != null) {
 					urlParamString += 'fields=' + fields;

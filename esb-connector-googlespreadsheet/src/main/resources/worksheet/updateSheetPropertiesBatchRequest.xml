@@ -18,9 +18,11 @@
 -->
 
 <template name="updateSheetPropertiesBatchRequest" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="spreadsheetId" description="Unique value of the spreadsheet"/>
-    <parameter name="requests" description="It contains data that is a kind of update to apply to a spreadshee"/>
-    <parameter name="fields" description="Specifying which fields to include in a partial response"/>
+    <parameter name="spreadsheetId" description="Unique identifier of the spreadsheet"/>
+    <parameter name="requests"
+               description="It contains data that is a kind of update to apply to a spreadshee"/>
+    <parameter name="fields"
+               description="Specifying which fields to include in a partial response"/>
     <sequence>
         <property name="uri.var.spreadsheetId" expression="$func:spreadsheetId"/>
         <property name="uri.var.requests" expression="$func:requests"/>
@@ -41,7 +43,6 @@
 		        var spreadsheetId = mc.getProperty("uri.var.spreadsheetId");
 		        var fields = mc.getProperty("fields");
 		        //url param processing start
-		       	mc.setProperty('uri.var.spreadsheetId', spreadsheetId);
 		        var urlParamString = '';
 				if (fields != "" && fields != null) {
 					urlParamString += '&fields=' + fields;

@@ -65,11 +65,11 @@
             } else {
             // Update the registry entry if it already exists.
             mc.getConfiguration().getRegistry().updateResource(newAccessRegistryPath,newAccessToken);
-        }
+            }
         }
         ]]>
         </script>
-        <!-- store the new accessToken into registry. -->
+        <!-- store the new accessToken into header. -->
         <header name="Authorization" expression="fn:concat('Bearer ', $ctx:uri.var.accessToken)"
                 scope="transport"/>
         <header name="Cache-Control" action="remove" scope="transport"/>

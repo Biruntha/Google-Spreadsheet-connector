@@ -18,13 +18,15 @@
 -->
 
 <template name="getMultipleCellData" xmlns="http://ws.apache.org/ns/synapse">
-    <parameter name="spreadsheetId" description="Unique value of the spreadsheet"/>
+    <parameter name="spreadsheetId" description="Unique identifier of the spreadsheet"/>
     <parameter name="ranges" description="The ranges to retrieve from the spreadsheet"/>
     <parameter name="dateTimeRenderOption" description="THow dates, times, and durations should
                                                                     be represented in the output"/>
     <parameter name="majorDimension" description="The major dimension that results should use"/>
-    <parameter name="valueRenderOption" description="How values should be represented in the output"/>
-    <parameter name="fields" description="Specifying which fields to include in a partial response"/>
+    <parameter name="valueRenderOption"
+               description="How values should be represented in the output"/>
+    <parameter name="fields"
+               description="Specifying which fields to include in a partial response"/>
     <sequence>
         <property name="uri.var.spreadsheetId" expression="$func:spreadsheetId"/>
         <property name="ranges" expression="$func:ranges"/>
@@ -42,7 +44,6 @@
 		        var valueRenderOption = mc.getProperty("valueRenderOption");
 		        var fields = mc.getProperty("fields");
                 //url param processing start
-		       	mc.setProperty('uri.var.spreadsheetId', spreadsheetId);
 		        var urlParamString = '';
 				if (dateTimeRenderOption != "" && dateTimeRenderOption != null) {
 					urlParamString += '&dateTimeRenderOption=' + dateTimeRenderOption;

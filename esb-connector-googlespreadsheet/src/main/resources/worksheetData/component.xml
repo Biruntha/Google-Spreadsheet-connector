@@ -29,8 +29,10 @@
         </component>
         <component name="getCellData">
             <file>getCellData.xml</file>
-            <description>Retrieve any set of cell data from a sheet and cell contents as input values
-                (as would be entered by a user at a keyboard) and/or the outputs of formula (if numeric)
+            <description>Retrieve any set of cell data from a sheet and cell contents as input
+                values
+                (as would be entered by a user at a keyboard) and/or the outputs of formula (if
+                numeric)
             </description>
         </component>
         <component name="getMultipleCellData">
@@ -50,7 +52,8 @@
         </component>
         <component name="updateCellsBatchRequest">
             <file>updateCellsBatchRequest.xml</file>
-            <description>Updates all cells in a range with new data that can be cell value, formatting.
+            <description>Updates all cells in a range with new data that can be cell value,
+                formatting.
             </description>
         </component>
         <component name="appendDimensionBatchRequest">
@@ -75,13 +78,15 @@
         </component>
         <component name="copyPasteBatchRequest">
             <file>copyPasteBatchRequest.xml</file>
-            <description>Copy cell formatting in one range and paste it into another range on the same sheet.
+            <description>Copy cell formatting in one range and paste it into another range on the
+                same sheet.
             </description>
         </component>
         <component name="cutPasteBatchRequest">
             <file>cutPasteBatchRequest.xml</file>
             <description>cuts the one range and pastes its data, formats, formulas,
-                         and merges to the another range on the same sheet.</description>
+                and merges to the another range on the same sheet.
+            </description>
         </component>
         <component name="updateConditionalFormatRuleBatchRequest">
             <file>updateConditionalFormatRuleBatchRequest.xml</file>
