@@ -42,30 +42,30 @@
 		        var namedRanges = mc.getProperty("namedRanges");
 		        //url param processing start
 		        var urlParamString = '';
-				if (fields != "" && fields != null) {
-					urlParamString += '&fields=' + fields;
-				}
-				if(urlParamString != '') {
-					urlParamString = '?' + urlParamString.toString().substring(1);
-				}
-				mc.setProperty('uri.var.urlParamString', urlParamString);
-				//url param processing end
-                //request body param processing start
-				payload = {};
-				if (spreadsheetId != null && spreadsheetId != "") {
-					payload.spreadsheetId = spreadsheetId;
-				}
-				if (properties != null && properties != "" && properties != {} ) {
-					    payload.properties = eval("("+properties+")");
-				}
-				if (sheets != null && sheets != "" && sheets!= []) {
-					    payload.sheets = eval("("+sheets+")");
-				}
-				if (namedRanges != null && namedRanges != "" && namedRanges!= []) {
-                        payload.namedRanges = eval("("+namedRanges+")");
-				}
-				mc.setPayloadJSON(payload);
-				//request body param processing end
+            if (fields != "" && fields != null) {
+                urlParamString += '&fields=' + fields;
+            }
+            if(urlParamString != '') {
+                urlParamString = '?' + urlParamString.toString().substring(1);
+            }
+            mc.setProperty('uri.var.urlParamString', urlParamString);
+            //url param processing end
+            //request body param processing start
+            payload = {};
+            if (spreadsheetId != null && spreadsheetId != "") {
+                payload.spreadsheetId = spreadsheetId;
+            }
+            if (properties != null && properties != "" && properties != {} ) {
+                    payload.properties = eval("("+properties+")");
+            }
+            if (sheets != null && sheets != "" && sheets!= []) {
+                    payload.sheets = eval("("+sheets+")");
+            }
+            if (namedRanges != null && namedRanges != "" && namedRanges!= []) {
+                    payload.namedRanges = eval("("+namedRanges+")");
+            }
+            mc.setPayloadJSON(payload);
+            //request body param processing end
             ]]>
         </script>
         <call>
