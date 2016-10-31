@@ -1,0 +1,67 @@
+Product: WSO2 ESB googlespreadsheet Connector for Google Sheets API Version v4 + Integration Tests
+
+ Pre-requisites:
+
+    - Maven 3.x
+    - Java 1.7 or above
+    - The org.wso2.esb.integration.integration-base project is required. The test suite has been configured to download this project automatically. If the automatic download fails, download the following project and compile it using the mvn clean install command to update your local repository:
+      https://github.com/wso2-extensions/esb-integration-base
+
+    Tested Platforms:
+
+    - Ubuntu 16.04
+    - WSO2 ESB 5.0.0
+    - java 1.7
+
+
+
+Steps to follow in setting integration test.
+
+
+ 1. Download ESB 5.0.0  by navigating to the following URL: http://wso2.com/products/enterprise-service-bus/#
+
+ 2. Get a access token from OAuth 2.0 Playground.
+       i)  Using the URL "https://developers.google.com/oauthplayground/" create a access token and refresh token.
+
+      Note: Application needs access to user data, it asks Google for a particular scope of access.
+            Here's the OAuth 2.0 scope information for the Google Sheets API:"https://spreadsheets.google.com/feeds"
+
+ 3. Update the googlespreadsheet properties file at location "<GOOGLESPREADSHEET_CONNECTOR_HOME>/src/test/resources/artifacts/ESB/connector/config" as below.
+
+        		refreshToken 					                    - Use the Refresh token.
+    	     	clientId						                    - Use the Client ID.
+    	    	clientSecret					                    - Use the Client Secret.
+    	        accessToken				                            - Use the accessToken.
+    			apiUrl						                        - Use the API URL of the google spreadsheet.
+    		    sheetId					                            - Update with your Sheet Id.
+    	        destinationSpreadsheetId		                    - Update with your Sheet Id.
+    		    ranges, range1, range2                              - Update with your Sheet name.
+    			rangeaddRows, data, rangeEditCell, rangeGetCellData - Update with your Sheet name.
+    	 	    requestsaddSheetBatchRequest                        - Update with your Sheet title.
+    		    requestsaddSheetBatchRequest1                       - Update with your Sheet title.
+    		    requestsdeleteSheetBatchRequest                     - Update with your Sheet sheetId.
+    		    requestsdeleteSheetBatchRequest1                    - Update with your Sheet sheetId.
+    	 	    requestsupdateSheetPropertiesBatchRequest           - Update with your Sheet title, sheetId.
+    		    requestsaddConditionalFormatRuleBatchRequest        - Update with your Sheet sheetId.
+    		    requestsAppendDimension                             - Update with your Sheet sheetId.
+    		    requestsAutoResizeDimensionsBatchRequest            - Update with your Sheet sheetId.
+    		    requestsCopyPasteBatchRequest                       - Update with your Sheet sheetId.
+    			requestsCutPasteBatchRequest				        - Update with your Sheet sheetId.
+    		    requestsDeleteConditionalFormatRuleBatchRequest		- Update with your Sheet sheetId.
+    		    requestDeleteDimensionBatchRequest				    - Update with your Sheet sheetId.
+    	        requestsInsertDimensionBatchRequest					- Update with your Sheet sheetId.
+    	 	    requestsMergeCellsBatchRequest				        - Update with your Sheet sheetId.
+    	        requestsMoveDimensionBatchRequest                   - Update with your Sheet sheetId.
+                requestsRepeatCellsBatchRequest                     - Update with your Sheet sheetId.
+                requestsSetDataValidationBatchRequest               - Update with your Sheet sheetId.
+                requestsSortRangeBatchRequest                       - Update with your Sheet sheetId.
+                requestsUpdateBordersBatchRequestMandatory          - Update with your Sheet sheetId.
+                requestsUpdateCellsBatchRequest                     - Update with your Sheet sheetId.
+                requestsUpdateConditionalFormatRuleBatchRequest     - Update with your Sheet sheetId.
+                requestsUpdateDimensionPropertiesBatchRequest       - Update with your Sheet sheetId.
+                rangeaddRows                                        - Update with your Sheet name.
+                data                                                - Update with your Sheet name.
+                rangeEditCell                                       - Update with your Sheet name.
+                rangeGetCellData                                    - Update with your Sheet name.
+ 4.  Navigate to "{ESB_Connector_Home}/" and run the following command.
+             $ mvn clean install
